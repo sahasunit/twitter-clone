@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
+import avatarPlaceholder from '../../public/avatar-temp-placeholder.png';
 
 const CreatePost = () => {
 	const [text, setText] = useState("");
@@ -60,7 +61,7 @@ const CreatePost = () => {
 		<div className='flex p-4 items-start gap-4 border-b border-gray-700'>
 			<div className='avatar'>
 				<div className='w-8 rounded-full'>
-					<img src={authUser.profileImg || "/src/public/avatar-placeholder.png"} />
+					<img src={authUser.profileImg || avatarPlaceholder} />
 				</div>
 			</div>
 			<form className='flex flex-col gap-2 w-full' onSubmit={handleSubmit}>

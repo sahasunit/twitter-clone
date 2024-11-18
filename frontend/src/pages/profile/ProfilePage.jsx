@@ -15,6 +15,8 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { formatMemberSinceDate } from "../../utils/date";
 import useFollow from '../../hooks/useFollow';
 import useUpdateUserProfile from "../../hooks/useUpdateUserProfile";
+import avatarPlaceholder from '../../public/avatar-temp-placeholder.png';
+import coverImage from "../../public/temp-cover.png";
 
 const ProfilePage = () => {
 	const [coverImg, setCoverImg] = useState(null);
@@ -90,7 +92,7 @@ const ProfilePage = () => {
 							{/* COVER IMG */}
 							<div className='relative group/cover'>
 								<img
-									src={coverImg || user?.coverImg || "/src/public/cover.png"}
+									src={coverImg || user?.coverImg || coverImage}
 									className='h-52 w-full object-cover'
 									alt='cover image'
 								/>
@@ -120,7 +122,7 @@ const ProfilePage = () => {
 								{/* USER AVATAR */}
 								<div className='avatar absolute -bottom-16 left-4'>
 									<div className='w-32 rounded-full relative group/avatar'>
-										<img src={profileImg || user?.profileImg || "/src/public/avatar-placeholder.png"} />
+										<img src={profileImg || user?.profileImg || avatarPlaceholder} />
 										<div className='absolute top-5 right-3 p-1 bg-primary rounded-full group-hover/avatar:opacity-100 opacity-0 cursor-pointer'>
 											{isMyProfile && (
 												<MdEdit

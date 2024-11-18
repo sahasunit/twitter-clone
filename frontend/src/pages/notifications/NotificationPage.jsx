@@ -7,6 +7,7 @@ import { FaHeart } from "react-icons/fa6";
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
+import avatarPlaceholder from '../../public/avatar-temp-placeholder.png';
 
 const NotificationPage = () => {
 
@@ -86,7 +87,7 @@ const NotificationPage = () => {
 							<Link to={`/profile/${notification.from.username}`}>
 								<div className='avatar'>
 									<div className='w-8 rounded-full'>
-										<img src={notification.from.profileImg || "/src/public/avatar-placeholder.png"} />
+										<img src={notification.from.profileImg || avatarPlaceholder} />
 									</div>
 								</div>
 								<div className='flex gap-1'>

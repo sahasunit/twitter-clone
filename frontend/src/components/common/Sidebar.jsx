@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
+import avatarPlaceholder from '../../public/avatar-temp-placeholder.png';
 
 const Sidebar = () => {
 
@@ -85,7 +86,7 @@ const Sidebar = () => {
 					>
 						<div className='avatar hidden md:inline-flex'>
 							<div className='w-8 rounded-full'>
-								<img src={authUser?.profileImg || "/src/public/avatar-placeholder.png"} />
+								<img src={authUser?.profileImg || avatarPlaceholder} />
 							</div>
 						</div>
 						<div className='flex justify-between flex-1'>
